@@ -11,31 +11,42 @@ El objetivo principal de este proyecto es analizar un padrón de clientes de seg
 ## 🛠️ 2. Stack Tecnológico
 * **Python**: Lenguaje principal de procesamiento.
 * **Pandas**: Limpieza, transformación estructurada y Feature Engineering.
+* **Matplotlib & Seaborn**: Visualización de datos y detección de patrones.
 * **Jupyter Notebook**: Entorno de desarrollo para análisis narrativo e interactivo.
-* **Git & GitHub**: Control de versiones y documentación del portfolio.
 
-## 📂 Estructura del Repositorio
-* `data/`: Directorio alojando el dataset original de +381,000 registros (ignorado por peso).
-* `ETL.ipynb`: Cuaderno principal documentado paso a paso con la extracción, transformación y limpieza de los datos.
-* `README.md`: Resumen ejecutivo y hallazgos del proyecto.
+## 📖 3. Diccionario de Datos
+Para comprender el padrón de afiliados, a continuación se detallan las variables del dataset:
 
-## 🧹 3. Fases del Proceso (ETL y Preparación)
-1. **Extract (Extracción):** Carga eficiente del dataset en un DataFrame estructurado.
-2. **Transform (Transformación y Limpieza):**
-   * Auditoría de calidad: 381,109 registros con **0 valores nulos** y **0 duplicados**.
-   * Estandarización de columnas categóricas de texto (conversión a minúsculas).
-   * Identificación y aislamiento de valores atípicos extremos (Primas Anuales > $500,000).
-3. **Load (Carga):** *(Próximamente)* Exportación del padrón limpio y segmentado.
+| Columna | Descripción |
+| :--- | :--- |
+| **id** | Identificador único del afiliado. |
+| **Gender** | Género del afiliado. |
+| **Age** | Edad biológica. |
+| **Age_Group** | Rango de edad segmentado (Feature Engineering propio). |
+| **Driving_License** | `1`: Tiene licencia de conducir, `0`: No tiene. |
+| **Region_Code** | Código anonimizado de la región donde reside el cliente. |
+| **Previously_Insured**| `1`: El cliente ya tiene seguro de auto, `0`: No tiene. |
+| **Vehicle_Age** | Antigüedad del vehículo (ej. `< 1 Year`, `1-2 Year`). |
+| **Vehicle_Damage** | `yes`: El vehículo tuvo daños en el pasado, `no`: Sin daños. |
+| **Annual_Premium** | Prima anual (monto en $) que paga por su seguro de salud actual. |
+| **Policy_Sales_Channel**| Código anonimizado del canal de contacto (ej. correo, teléfono, presencial). |
+| **Vintage** | Días de antigüedad del cliente en la aseguradora. |
+| **Response** | Variable objetivo (`1`: Aceptó la oferta de seguro de auto, `0`: La rechazó). |
 
-## 📊 4. Hallazgos Preliminares
-* El padrón inicial demostró alta consistencia e integridad, sin faltantes de datos.
+## 🧹 4. Fases del Proceso: Preparación y ETL
+**Fase completada.** El proceso detallado se encuentra en `ETL.ipynb`:
+* **Auditoría de calidad:** Verificación de 381,109 registros confirmando **0 valores nulos** y **0 duplicados**.
+* **Transformación:** Estandarización de columnas de texto a minúsculas.
+* **Tratamiento de Outliers:** Aislamiento y eliminación de primas anuales extremas (> $500,000) para no distorsionar métricas.
+* **Feature Engineering:** Creación de la columna categórica `Age_Group`.
+* **Exportación:** Generación del archivo final optimizado `train_clean.csv`.
+
+## 📊 5. Análisis Exploratorio (EDA) e Insights
+*(En desarrollo dentro de `EDA.ipynb`)*
+* El padrón inicial demostró alta consistencia e integridad.
 * El 75% de los clientes abonan primas anuales inferiores a $39,400.
-* La variable objetivo (`Response`) indica el interés real en la oferta complementaria, permitiendo una segmentación directa del riesgo.
 
-## 🚀 5. Cómo ejecutar este proyecto
+## 🚀 6. Cómo ejecutar este proyecto
 1. Clona este repositorio: `git clone [URL_DE_TU_REPO]`
-2. Instala la librería necesaria: `pip install pandas`
-3. Ejecuta el archivo `ETL.ipynb` en tu entorno de Visual Studio Code o Jupyter local.
-
----
-⌨️ Desarrollado por **Ysaac Salvatierra** | Estudiante de Ingeniería en Sistemas y Analista de Datos.
+2. Instala las librerías: `pip install pandas matplotlib seaborn`
+3. Ejecuta los cuadernos en Visual Studio Code o Jupyter local.
