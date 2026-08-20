@@ -1,37 +1,41 @@
-# 📊 Proyecto de Preparación y ETL - Padrón de Seguros y Afiliados
+# 📊 Proyecto de Preparación y ETL - Padrón de Seguros de Salud y Vehículos
 
-## 📌 Descripción del Proyecto
-Este repositorio forma parte de mi portafolio como analista de datos y estudiante de Ingeniería en Sistemas. El objetivo principal de este proyecto es realizar el proceso completo de **ETL (Extract, Transform, Load)** y la auditoría de calidad de datos sobre un dataset de seguros de salud y vehículos, utilizando Python y la librería Pandas.
+## 🎯 1. Objetivo del Proyecto
+Este repositorio forma parte de mi portafolio como estudiante de Ingeniería en Sistemas y Analista de Datos. El objetivo principal es aplicar un proceso completo de **ETL (Extract, Transform, Load)** para limpiar y estructurar un padrón masivo de clientes. 
 
-## 🛠️ Tecnologías y Herramientas Utilizadas
-* **Python**: Lenguaje principal de programación.
-* **Pandas**: Manipulación, limpieza y análisis exploratorio de datos.
-* **Jupyter Notebook (.ipynb)**: Entorno interactivo de desarrollo estructurado en celdas.
-* **Visual Studio Code**: Entorno de desarrollo local.
-* **Git & GitHub**: Control de versiones y alojamiento de código en la nube.
+**Preguntas clave a resolver con estos datos:**
+* ¿Cómo se distribuyen las primas anuales y existen valores atípicos (outliers) en los pagos?
+* ¿Cuál es la proporción de clientes con daños previos en sus vehículos?
+* ¿Existen discrepancias o errores de formato en los registros categóricos?
+
+## 🛠️ 2. Stack Tecnológico
+* **Python**: Lenguaje principal de procesamiento.
+* **Pandas**: Limpieza, transformación y análisis exploratorio (EDA).
+* **Jupyter Notebook**: Entorno de desarrollo interactivo.
+* **Git & GitHub**: Control de versiones y documentación.
 
 ## 📂 Estructura del Repositorio
-* `ETL.ipynb`: Cuaderno principal con el código paso a paso de la extracción, auditoría y limpieza de los datos.
-* `.gitignore`: Configuración para excluir archivos locales innecesarios o pesados.
+* `data/`: Carpeta (ignorada en Git) donde se aloja el dataset original de más de 381,000 registros.
+* `ETL.ipynb`: Cuaderno principal con el código paso a paso y comentado.
+* `README.md`: Resumen y conclusiones del proyecto.
 
-## 🔍 Fases del Proyecto (ETL)
-1. **Extract (Extracción):** Carga eficiente del dataset masivo (más de 381,000 registros) en un DataFrame estructurado mediante Pandas.
+## 🧹 3. Fases del Proceso ETL
+1. **Extract (Extracción):** Carga eficiente del dataset masivo en un DataFrame estructurado mediante Pandas.
 2. **Transform (Transformación y Auditoría):**
-   * Inspección de tipos de datos y estructuras mediante `df.info()`.
-   * Verificación exhaustiva de valores nulos o celdas vacías.
-   * Auditoría de registros duplicados para asegurar la integridad de la base.
-3. **Load (Carga):** Preparación del entorno y documentación para la exportación de los datos limpios hacia un destino final listo para análisis avanzados o modelos predictivos.
+   * Verificación de la calidad de datos: 381,109 registros con **0 valores nulos**.
+   * Auditoría de integridad: **0 registros duplicados**.
+   * *(Próximamente)* Estandarización de variables de texto y tratamiento de outliers numéricos.
+3. **Load (Carga):** *(Próximamente)* Exportación del padrón limpio a formato CSV, optimizado para ser consumido por herramientas de visualización o Machine Learning.
 
-## 📊 Hallazgos del Análisis Preliminar
-Tras realizar la auditoría inicial de los datos, se obtuvieron las siguientes conclusiones:
-- **Calidad de datos:** El dataset se encuentra completo, con 381,109 registros y 0 valores nulos en todas sus columnas.
-- **Integridad:** Se realizó un conteo de duplicados (resultado: 0), confirmando que el padrón es consistente.
-- **Estructura:** Se identificaron variables categóricas (como 'Gender' o 'Vehicle_Damage') y numéricas (como 'Annual_Premium') listas para ser transformadas para futuros modelos.
+## 📊 4. Hallazgos y Conclusiones Preliminares
+* **Estructura sólida:** El dataset base demostró una calidad excepcional de origen, sin faltantes ni registros repetidos, lo que agiliza la fase de normalización.
+* **Distribución de variables:** El 75% de los afiliados abona primas anuales inferiores a $39,400.
+* **Valores atípicos detectados:** Se identificó una prima máxima de $540,165 que requerirá aislamiento y análisis en la fase de transformación.
 
-
+## 🚀 5. Cómo ejecutar este proyecto
+1. Clona este repositorio: `git clone [URL_DE_TU_REPO]`
+2. Instala la librería necesaria: `pip install pandas`
+3. Ejecuta el archivo `ETL.ipynb` en tu entorno de Visual Studio Code o Jupyter local.
 
 ---
-⌨️ Desarrollado con 💻 por **Ysaac Salvatierra** | Estudiante de Ingeniería en Sistemas y Analista de Datos Junior.
-
-
-
+⌨️ Desarrollado por **Ysaac Salvatierra** | Estudiante de Ingeniería en Sistemas y Analista de Datos.
