@@ -22,5 +22,16 @@ Este repositorio forma parte de mi portafolio como analista de datos y estudiant
    * Auditoría de registros duplicados para asegurar la integridad de la base.
 3. **Load (Carga):** Preparación del entorno y documentación para la exportación de los datos limpios hacia un destino final listo para análisis avanzados o modelos predictivos.
 
+## 📊 Hallazgos del Análisis Preliminar
+Tras realizar la auditoría inicial de los datos, se obtuvieron las siguientes conclusiones:
+- **Calidad de datos:** El dataset se encuentra completo, con 381,109 registros y 0 valores nulos en todas sus columnas.
+- **Integridad:** Se realizó un conteo de duplicados (resultado: 0), confirmando que el padrón es consistente.
+- **Estructura:** Se identificaron variables categóricas (como 'Gender' o 'Vehicle_Damage') y numéricas (como 'Annual_Premium') listas para ser transformadas para futuros modelos.
+
+
+
 ---
 ⌨️ Desarrollado con 💻 por **Ysaac Salvatierra** | Estudiante de Ingeniería en Sistemas y Analista de Datos Junior.
+
+
+
