@@ -41,12 +41,11 @@ Para comprender el padrón de afiliados, a continuación se detallan las variabl
 * **Feature Engineering:** Creación de la columna categórica `Age_Group`.
 * **Exportación:** Generación del archivo final optimizado `train_clean.csv`.
 
-## 📊 5. Análisis Exploratorio (EDA) e Insights
-*(En desarrollo dentro de `EDA.ipynb`)*
-* El padrón inicial demostró alta consistencia e integridad.
-* El 75% de los clientes abonan primas anuales inferiores a $39,400.
+## 📊 5. Análisis Exploratorio (EDA) e Insights de Negocio
+* **Impacto del Daño Previo:** Se identificó que el antecedente de siniestros o daños en el vehículo es el principal motor de conversión. Los clientes con historial de daños (`yes`) presentan una tasa de aceptación del **23.8%**, en contrastada oposición al **0.5%** de aquellos con vehículos intactos (`no`). 
+* **Acción sugerida:** Optimizar el presupuesto de marketing focalizando las campañas de venta cruzada exclusivamente en segmentos que ya hayan experimentado incidentes o que posean mayor propensión al riesgo. *(Análisis completo en desarrollo dentro de `EDA.ipynb`)*.
 
 ## 🚀 6. Cómo ejecutar este proyecto
-1. Clona este repositorio: `git clone [URL_DE_TU_REPO]`
+1. Clona este repositorio: `git clone https://github.com/YsaacSalvatierra99/Preparacion-y-ETL.git`
 2. Instala las librerías: `pip install pandas matplotlib seaborn`
 3. Ejecuta los cuadernos en Visual Studio Code o Jupyter local.
